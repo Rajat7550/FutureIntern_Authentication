@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9; /* Light background for the whole page */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333; /* Dark text color for better readability */
+        }
+        .dashboard-container {
+            background-color: #ffffff; /* White background for the dashboard */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 350px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid #ddd; /* Light border for a clean look */
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2c3e50; /* Darker color for the heading */
+        }
+        p {
+            font-size: 18px;
+            color: #7f8c8d; /* Muted color for paragraph text */
+            margin-bottom: 25px;
+        }
+        a {
+            display: inline-block;
+            background-color: #3498db; /* Blue background for buttons */
+            color: #fff;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 18px;
+        }
+        a:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+            transform: translateY(-3px);
+        }
+        .logout-btn {
+            background-color: #e74c3c; /* Red background for logout button */
+            margin-top: 25px;
+        }
+        .logout-btn:hover {
+            background-color: #c0392b; /* Darker red on hover */
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Hello, {{ user_first_name }} {{ user_last_name }}!</h1>
+        <p>Email: {{ user_email }}</p>
+        <a href="#">Edit Profile</a>
+        <a href="{% url 'login_view' %}" class="logout-btn">Logout</a>
+    </div>
+</body>
+</html>
